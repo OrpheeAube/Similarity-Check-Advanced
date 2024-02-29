@@ -32,7 +32,7 @@ similarity_matrix = cosine_similarity(keyword_embeddings)
 threshold = float(input("Enter the similarity threshold (0 to 1, default: 0.8): ") or 0.8)
 
 # Perform clustering
-clustering = AgglomerativeClustering(n_clusters=None, affinity="precomputed", linkage="average", distance_threshold=1-threshold)
+clustering = AgglomerativeClustering(n_clusters=None, metric="precomputed", linkage="average", distance_threshold=1-threshold)
 clusters = clustering.fit_predict(1 - similarity_matrix)
 
 # Prepare Excel output
